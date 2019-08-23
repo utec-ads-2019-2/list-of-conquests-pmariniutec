@@ -1,7 +1,21 @@
 #include <iostream>
+#include <string>
+#include <map>
 
-using namespace std;
+int main() {
+  int N;
+  std::map<std::string, int> count; 
 
-int main(int argc, char *argv[]) {
-    return 0;
+  std::cin >> N;
+  std::cin.ignore();
+
+  while(N--) {   
+	std::string country, tmp;
+	std::cin >> country;
+	std::getline(std::cin, tmp);
+	count[country] += 1;    
+  }
+
+  for (auto& p : count)
+	std::cout << p.first << ' ' << p.second << '\n';
 }
